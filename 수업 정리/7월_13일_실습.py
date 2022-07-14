@@ -10,6 +10,7 @@
 #         a += 1
 # print(a)
 
+
 # 문제 10. 5의 개수 구하기
 
 # Q. 주어진 리스트의 요소 중에서 5의 개수를 출력하시오.
@@ -22,6 +23,7 @@
 #         five += 1
 # print(five)
 
+
 # 문제 11. 구구단 출력하기
 
 # Q. 2단부터 9단까지 반복하여 구구단을 출력하세요.
@@ -32,6 +34,7 @@
 #     print(f'{i}단')
 #     for j in range(1, 10):
 #         print(f'{i} x {j} = {i * j}')
+
 
 # 문제 12. 문자열 조작하기
 
@@ -44,6 +47,7 @@
 #     if i != 'a':
 #         re_word += i
 # print(re_word)
+
 
 # 문제 13. 문자열 조작하기
 
@@ -62,8 +66,8 @@
 # A.
 # n = int(input())
 # def cube(n):
-#     return n**3
-# print(cube(n))
+#     return n**3   #3제곱을 구하는 cube 함수 설정
+# print(cube(12))   #12를 넣어서 계산한 값 도출
 
 # 예제 02 기초 함수
 
@@ -79,3 +83,13 @@
 #     return a * b, (a + b) * 2
 # print(f'''사각형 넓이 : {rectangle(a, b)[0]}
 # 사각형 둘레 : {rectangle(a, b)[1]}''')
+
+
+# 참고
+# def rectangle(a, b):
+#     return a * b, (a + b) * 2     는
+
+# def rectangle(a, b):
+#     area = a * b
+#     perimeter = 2 * (a + b)
+#     return area, perimeter        와 같이도 표현이 가능하다
