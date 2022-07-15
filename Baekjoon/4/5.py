@@ -12,4 +12,11 @@
 # avg = sum(b)/a
 # c = b * avg
 
+# a = int(input())
+# b = list(map(int, input().split()))
+# max_a = max(b)
+# new_a = []
 # for i in b:
+#     new_a.append(i / max_a * 100)
+# print(sum(new_a) / a)
+
