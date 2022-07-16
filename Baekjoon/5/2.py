@@ -9,3 +9,34 @@
 # 10000보다 작거나 같은 셀프 넘버를 한 줄에 하나씩 출력하는 프로그램을 작성하시오.
 
 # A.
+# 혼자 푼 풀이
+# num = []
+# for i in range(10000):
+#     num.append(i+1)
+# num2 = []
+# for i in num:
+#     a = i
+#     b = a//1000
+#     c = (a - b*1000)//100
+#     d = (a - b*1000 - c*100)// 10
+#     e = (a - b*1000 - c*100 -d*10)
+#     f = a + b + c + d + e
+#     num2.append(f)
+# num3 = []
+# for i in num:
+#     if not i in num2:
+#         num3.append(i)
+# for i in num3:
+#     print(i)
+
+# num = []
+# num2 = set([])
+# for i in range(10000):
+#     num.append(i + 1)
+# for i in num:
+#     for j in str(i):
+#         i += int(j)
+#     num2.add(i)
+# num3 = sorted(num - num2)
+# for i in num3:
+#     print(i)
