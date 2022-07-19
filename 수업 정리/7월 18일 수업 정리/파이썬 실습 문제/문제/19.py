@@ -5,11 +5,20 @@
 # 123
 
 # A.
-a = int(input())
-b = 0
-for i in range(1,a):
-    if (a // 10**i) != 0:
-        b = i + 1
-    elif (a // 10) == 0:
-        b = 1
-print(b)
+# a = int(input())
+# b = 0
+# for i in range(1,a):
+#     if (a // 10**i) != 0:
+#         b = i + 1
+#     elif (a // 10) == 0:
+#         b = 1
+# print(b)
+
+# 해설
+
+number = int(input())
+result = 0
+while number != 0:
+    number //= 10
+    result += 1
+print(result)
