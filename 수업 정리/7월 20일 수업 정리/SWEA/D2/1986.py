@@ -1,3 +1,7 @@
+import sys
+
+sys.stdin = open("1986_input.txt", "r")
+
 t = int(input())
 
 for i in range(t):
@@ -8,7 +12,6 @@ for i in range(t):
             result -= j
         else:
             result += j
-    print(f'#{i + 1}', end = ' ')
-    print(result, end = ' ')
-    print()
+    print(f'#{i + 1} {result}')
+
 
