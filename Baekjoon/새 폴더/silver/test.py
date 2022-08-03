@@ -1,35 +1,9 @@
-while True:
-    sen = input()
+array = [1, 5, 2, 6, 3, 7, 4]
+commands = [[2,5,3],[4,4,1],[1,7,3]]
+answer = []
 
-    if sen == '.':
-        break
-
-    bracket = []
-    cnt = 0
-
-    for i in sen:
-        if i == '(' or i == '[':
-            bracket.append(i)
-        elif i == ')':
-            if len(bracket) == 0:
-                cnt = 1
-                break    
-            if bracket[-1] == '(':
-                bracket.pop()
-            else:
-                cnt = 1
-                break
-        elif i == ']':
-            if len(bracket) == 0:
-                cnt = 1
-                break    
-            if bracket[-1] == '[':
-                bracket.pop()
-            else:
-                cnt = 1
-                break
-
-    if len(bracket) == 0 and cnt == 0:
-        print('yes')
-    else:
-        print('no')
+for i in range(len(commands)):
+    cut = array[commands[i][0] - 1:commands[i][1]]
+    result = sorted(cut)
+    num = result[commands[i][2] - 1]
+    answer.append(num)
