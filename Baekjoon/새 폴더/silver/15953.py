@@ -11,3 +11,4 @@ for test in range(test_case):
     second_price += [0] *40
     print(first_price[first - 1] + second_price[second - 1])
 
+# 문제에 주어진 조건을 제대로 읽자
