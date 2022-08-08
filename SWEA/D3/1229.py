@@ -1,4 +1,7 @@
-# for test in range(10):
+import sys
+
+sys.stdin = open("1229_input.txt", "r")
+
 for test in range(1, 11):
     num = int(input())
     password = list(map(int, input().split()))
@@ -12,7 +15,7 @@ for test in range(1, 11):
         if commands[i] =='I':
             insert = 1
             pass_h = password[:int(commands[i + 1]):]
-            pass_t = commands[i + 3 : i + 3 + int(commands[i + 2]):]
+            pass_t = commands[i + 3 : i + 3 + int(commands[i + 2]):] + password[int(commands[i + 1])::]
             password = pass_h + pass_t
         elif commands[i] == 'D':
             insert = 0
