@@ -1,9 +1,20 @@
-array = [1, 5, 2, 6, 3, 7, 4]
-commands = [[2,5,3],[4,4,1],[1,7,3]]
-answer = []
+n, m, r = list(map(int, input().split()))
 
-for i in range(len(commands)):
-    cut = array[commands[i][0] - 1:commands[i][1]]
-    result = sorted(cut)
-    num = result[commands[i][2] - 1]
-    answer.append(num)
+gragh =[[]]
+for _ in range(n):
+    gragh.append([])
+for _ in range(m):
+    i, j = list(map(int, input().split()))
+    gragh[i].append(j)
+check = [0] * (n + 1)
+cnt = 1
+def dfs(x, count):
+    check[x] = count
+    re = sorted(gragh[x])
+    for i in re:
+        if check[i] == 0:
+            count += 1
+            dfs(i)
+dfs(1, cnt)
+
+print(check)
