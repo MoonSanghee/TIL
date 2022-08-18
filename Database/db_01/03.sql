@@ -44,12 +44,12 @@ GROUP BY is_drinking;
 
 -- 8. 각 성별(gender)의 평균 왼쪽 시력(va_left)과 평균 오른쪽 시력(va_right)를 출력하시오.
 -- 단, 평균 왼쪽 시력과 평균 오른쪽 시력의 컬럼명을 '평균 왼쪽 시력' '평균 오른쪽 시력'로 표시하고, 평균 시력은 소수점 둘째 자리까지 출력하시오.
-SELECT gender, ROUND(AVG(va_left), 2) '평균 왼쪽 시력', ROUND(AVG(va_right), 2) '평균 오른쪽 시력'
+SELECT gender, ROUND(AVG(va_left), 2) "평균 왼쪽 시력", ROUND(AVG(va_right), 2) "평균 오른쪽 시력"
 FROM healthcare
 GROUP BY gender;
 
 -- 9. 각 나이대(age)의 평균 키와 평균 몸무게를 출력하시오.
-SELECT age, AVG(height), AVG(weight)
+SELECT age, AVG(height) "평균 키", AVG(weight) "평균 몸무게"
 FROM healthcare
 GROUP BY age
 HAVING AVG(height)>=160 and AVG(weight)>=60;
