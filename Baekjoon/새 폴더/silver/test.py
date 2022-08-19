@@ -1,2 +1,4 @@
-a = 'speak'
-print(a + a[::-1])
+mx = 2
+
+mx = min(int(input()), mx)
+print(mx)
