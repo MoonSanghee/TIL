@@ -1,43 +1,11 @@
-# python 통과
+n, m = map(int, input().split())
+matrix = [list(input()) for _ in range(n)]
 
-import sys
-M, N = map(int, sys.stdin.readline().split())
-
-sqrt_ = int(N ** (1/2))
-
-def p(n):
-    if n == 1:
-        return False
-    else:
-        for j in range(2, sqrt_ + 1):
-            if n != j and not n % j:
-                return False
-            elif j == n:
-                return True
-        return True
-
-for i in range(M, N + 1):
-    if p(i):
-        print(i)
-
-#############################################
-
-# python X pypy3 통과
- 
-import sys
-M, N = map(int, sys.stdin.readline().split())
-
-for i in range(M, N + 1):
-    flag = True
-    if i == 1:
-        flag = False
-    else:
-        sqrt_ = int(N ** (1/2))
-        for j in range(2, sqrt_ + 1):
-            if i != j and not i % j:
-                flag = False
-                break
-            elif j == i:
-                break
-    if flag:
-        print(i)
+size = 1
+for i in range(1, n):
+    for a in range(n):
+        for b in range(m):
+            if a + i < n and b + i < m:
+                if matrix[a][b] == matrix[a + i][b] == matrix[a][b + i] == matrix[a + i][b + i]:
+                    size = (i + 1) ** 2
+                    
