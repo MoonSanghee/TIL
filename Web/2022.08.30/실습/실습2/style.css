@@ -1,0 +1,28 @@
+/* 아래에 CSS를 작성해주세요. */
+.card {
+  width: 300px;
+}
+
+.item {
+  width: 90%;
+  margin: auto;
+  border-radius: 1rem;
+}
+.store {
+  font-size: 14pt;
+  color: gray ;
+}
+.sale {
+  font-size: 20pt;
+  font-weight: bold;
+}
+.percent {
+  color: aqua;
+}
+.review {
+  font-size: 14pt;
+  font-weight: bold;
+}
+.count {
+  color: gray;
+}

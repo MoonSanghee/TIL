@@ -1,0 +1,32 @@
+/* 아래에 CSS를 작성해주세요. */
+.card {
+  width: 900px;
+}
+.center {
+  text-align : center;
+}
+.items {
+  width: 300px;
+  height: 450px;
+  display: inline-block;
+  vertical-align:top;
+
+}
+.items-image {
+  width: 97%;
+  border-radius: 1rem;
+}
+.category {
+  font-size: 14px;
+}
+.guide {
+  font-size: 16px;
+  font-weight: bold;
+}
+.info {
+  font-size: 8px;
+  color: gainsboro;
+  letter-spacing:-1px;
+}
+
+/*   vertical-align:top; 맨 위 줄에 맞춰 정렬 */
