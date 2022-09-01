@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  color: #333333;
+}
+
+.head {
+  justify-content: center;
+}
+
+.banner-image {
+  height: 700px;
+  width: 100%;
+  background-image: url("../assets/apparel.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navi {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  height: 50px;
+  background-color: white;
+}
+
+.navi-item {
+  margin: 10px;
+}
+
+.navi-item :hover {
+  color: white;
+  background-color: black;
+  border-radius: 3px;
+}
+
+.navi-list {
+  display: flex;
+  list-style: none;
+  margin:  0;
+  padding: 0;
+}
+
+.navi-link {
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  margin: 30px;
+  flex-wrap: wrap;
+}
+
+.about {
+  display: flex;
+  margin: 10 px;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  width: 100%;
+}
+
+.pic {
+  display: inline-block;
+  width: 500px;
+  border-radius: 20px;
+}
+
+.text {
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.center {
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.more {
+  display: flex;
+  width: 100%;
+  margin: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.more-head {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.more-img {
+  height: 64px;
+  width: 64px;
+}
+
+.info-img {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.info {
+  align-items: center;
+  line-height : 150%;
+  margin: 4rem;
+  text-align: center;
+}
+
+.top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 3%;
+}
+
+
+.items {
+  display: flex;
+  width: 1280px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.item {
+  width: 30%;
+  border: 1px solid black;
+  justify-content: center;
+  padding: .5rem;
+  margin: .5rem;
+}
+
+.item-name {
+  width: 100%;
+  text-align: center;
+  margin: .5rem;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+.item-image {
+  width: 100%;
+}
