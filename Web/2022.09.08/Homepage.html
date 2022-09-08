@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+  <!-- 네브 바 -->
+  <nav class="navbar navbar-expand-lg bg-light px-4 px-lg-5">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Shop
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All Products</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Popular Items</a></li>
+              <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button class="btn btn-outline-dark" type="submit">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Cart
+          <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- 배너 -->
+  <div class="py-5 bg-dark text-center text-light">
+    <div class="my-5">
+      <h1 class="fw-bolder display-4">Shop in style</h1>
+      <div class="lead opacity-75">With this shop hompeage template</div>
+    </div>
+  </div>
+
+  <!-- 본문 -->
+  <section class="">
+    <div class="container px-5 py-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <!-- 1. Fancy Product -->
+        <div class="col mb-5">
+          <div class="card h-100">
+            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="">
+            <div class="card-body p-4 text-center">
+              <h4 class="fw-bolder">Fancy Product</h4>
+              <div>$40.00 - $80.00</div>
+            </div>
+            <div class="card-footer bg-white pt-0 pb-4 border-0 text-center">
+              <button class="btn btn-outline-dark" type="submit">
+                View options
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 2. Special Item -->
+        <div class="col mb-5">
+          <div class="card h-100">
+            <span class="badge bg-dark position-absolute top-0 end-0 m-2">Sale</span>
+            <img class="" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="">
+            <div class="card-body p-4 text-center">
+              <h4 class="fw-bolder">Special Item
+              </h4>
+              <div class="d-flex justify-content-center mb-2 text-warning">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div><span class="text-decoration-line-through text-black-50">$20.00</span> $18.00</div>
+            </div>
+            <div class="card-footer bg-white pt-0 pb-4 border-0 text-center">
+              <button class="btn btn-outline-dark" type="submit">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 3. Sale Item -->
+        <div class="col mb-5">
+          <div class="card h-100">
+            <span class="badge bg-dark position-absolute top-0 end-0 m-2">Sale</span>
+            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="">
+            <div class="card-body p-4 text-center">
+              <h4 class="fw-bolder">Sale Item</h4>
+              <div><span class="text-decoration-line-through text-black-50">$50.00</span> $25.00</div>
+            </div>
+            <div class="card-footer bg-white pt-0 pb-4 border-0 text-center">
+              <button class="btn btn-outline-dark" type="submit">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 4. Popular Item -->
+        <div class="col mb-5">
+          <div class="card h-100">
+            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="">
+            <div class="card-body p-4 text-center">
+              <h4 class="fw-bolder">Popular Item</h4>
+              <div class="d-flex justify-content-center mb-2 text-warning">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>$40.00</div>
+            </div>
+            <div class="card-footer bg-white pt-0 pb-4 border-0 text-center">
+              <button class="btn btn-outline-dark" type="submit">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 5. Sale Item -->
+        <div class="col mb-5">
+          <div class="card h-100">
+            <span class="badge bg-dark position-absolute top-0 end-0 m-2">Sale</span>
+            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="">
+            <div class="card-body p-4 text-center">
+              <h4 class="fw-bolder">Sale Item</h4>
+              <div><span class="text-decoration-line-through text-black-50">$50.00</span> $25.00</div>
+            </div>
+            <div class="card-footer bg-white pt-0 pb-4 border-0 text-center">
+              <button class="btn btn-outline-dark" type="submit">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 6. Fancy Product -->
+        <div class="col mb-5">
+          <div class="card h-100">
+            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="">
+            <div class="card-body p-4 text-center">
+              <h4 class="fw-bolder">Fancy Product</h4>
+              <div>$120.00 - $280.00</div>
+            </div>
+            <div class="card-footer bg-white pt-0 pb-4 border-0 text-center">
+              <button class="btn btn-outline-dark" type="submit">
+                View options
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 7. Special Item -->
+        <div class="col mb-5">
+          <div class="card h-100">
+            <span class="badge bg-dark position-absolute top-0 end-0 m-2">Sale</span>
+            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="">
+            <div class="card-body p-4 text-center">
+              <h4 class="fw-bolder">Special Item</h4>
+              <div class="d-flex justify-content-center mb-2 text-warning">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div><span class="text-decoration-line-through text-black-50">$20.00</span> $18.00</div>
+            </div>
+            <div class="card-footer bg-white pt-0 pb-4 border-0 text-center">
+              <button class="btn btn-outline-dark" type="submit">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 8. Popular Item -->
+        <div class="col mb-5">
+          <div class="card h-100">
+            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="">
+            <div class="card-body p-4 text-center">
+              <h4 class="fw-bolder">Popular Item</h4>
+              <div class="d-flex justify-content-center mb-2 text-warning">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>$40.00</div>
+            </div>
+            <div class="card-footer bg-white pt-0 pb-4 border-0 text-center">
+              <button class="btn btn-outline-dark" type="submit">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="py-5 bg-dark text-light text-center">
+    Copyright © Your Website 2022
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
