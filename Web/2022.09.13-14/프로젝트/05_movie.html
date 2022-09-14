@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon_io/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/favicon_io/site.webmanifest">
+</head>
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <img src="images/logo.png" class="mx-3"  style="width: 90px;">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="03_community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#myModal">Login</a>
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container m-5 px-5">
+    <div class="d-flex">
+      <div style="width: 20%;" class="">
+        <img class="rounded-2 img-fluid" src="images/movie1.jpg">
+      </div>
+      <div class="ms-5">
+        <h2>쇼생크 탈출 (1994)</h2>
+        <p>The Showshank Redemption, 1994</p>
+        <div class="d-flex">
+          <div class="opacity-50">
+            <p>개봉</p>
+            <p>재개봉</p>
+            <p>장르</p>
+            <p>국가</p>
+            <p>등급</p>
+            <p>러닝타임</p>
+          </div>
+          <div class="ms-5">
+            <p>1995.02.04</p>
+            <p>2016.02.04</p>
+            <p>드라마</p>
+            <p>미국</p>
+            <p>15세 이상 관람가</p>
+            <p>133분, 142분(재개봉)</p>
+          </div>
+          <div class="opacity-50 ms-5">
+            <p>평점</p>
+            <p>누적관객</p>
+            <br>
+            <!-- <div class="d-flex">
+              <p>영화정보</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+              </svg>
+            </div> -->
+          </div>
+          <div class="ms-5">
+            <p>⭐️ 9.6</p>
+            <p>11,413명</p>
+          </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex my-2">
+          <a class="btn btn-outline-secondary" style="width: 33%;" href="https://watcha.com/ko-KR/contents/mNdKBkO" role="button">왓챠</a>
+          <a class="btn btn-outline-secondary" style="width: 33%;" href="https://www.wavve.com/player/movie?movieid=MV_CD01_WR0000011371" role="button">웨이브</a>  
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container px-5 mx-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">주요정보</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">출연/제작</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">영상/포토</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">평점</button>
+      </li>
+    </ul>
+    <!-- 주요정보 -->
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <!-- 줄거리 -->
+        <div class="my-5" style="width: 72%;">
+          <strong>두려움은 너를 죄수로 가두고 <br>
+            희망은 너를 자유롭게 하리라</strong><br>
+          <p class="mt-3">촉망 받던 은행 부지점장 ‘앤디(팀 로빈슨 分)’는 아내와 그 애인을 살해한 혐의로 종신형을 받고 쇼생크 교도소에 수감된다.</p>
+          <div>
+            <div style="display: none;"> 강력범들이 수감된 이곳에서 재소자들은 짐승 취급 당하고, 혹여 간수 눈에 잘못 보였다가는 개죽음 당하기 십상이다. 처음엔 적응 못하던 ‘앤디’는 교도소 내 모든 물건을 구해주는 ‘레드(모건 프리먼 分)’와 친해지며 교도소 생활에 적응하려 하지만, 악질 재소자에게 걸려 강간까지 당한다.
+              그러던 어느 날, 간수장의 세금 면제를 도와주며 간수들의 비공식 회계사로 일하게 되고, 마침내는 소장의 검은 돈까지 관리해주게 된다. 덕분에 교도소 내 도서관을 열 수 있게 되었을 무렵, 신참내기 ‘토미(길 벨로우스 分)’로부터 ‘앤디’의 무죄를 입증할 기회를 얻지만, 노튼 소장은 ‘앤디’를 독방에 가두고 ‘토미’를 무참히 죽여버리는데... </div>
+            <input value="더보기" onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '숨기기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '더보기';}" type="button" />
+          </div>
+        </div>
+        <!-- 출연진 -->
+        <div class="my-5">
+          <div class="d-flex justify-content-between border-bottom border-1 py-3">
+            <h4 class="">출연진</h4>
+            <a href="https://movie.daum.net/moviedb/crew?movieId=1368" target="_blank" class="badge rounded-pill text-bg-secondary text-decoration-none fs-5">더보기 ></a>
+          </div>
+          <div class="row row-cols-7">
+            <div class="col">
+              <div class="img-fluid my-3">
+                <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F15404110ADFC72D333" alt="">
+              </div>
+              <div>프랭크 다라본트</div>
+              <div class="text-dark text-opacity-50">감독</div>
+            </div>
+            <div class="col">
+              <div class="img-fluid my-3">
+                <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F140D7C10ADF8435D0C" alt="">
+              </div>
+              <div>팀 로빈스</div>
+              <div class="text-dark text-opacity-50">주연</div>
+            </div>
+            <div class="col">
+              <div class="img-fluid my-3">
+                <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312" alt="">
+              </div>
+              <div>모건 프리먼</div>
+              <div class="text-dark text-opacity-50">주연</div>
+            </div>
+            <div class="col">
+              <div class="img-fluid my-3">
+                <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F156B8D10B16CC9264C" alt="">
+              </div>
+              <div>밥 건튼</div>
+              <div class="text-dark text-opacity-50">출연</div>
+            </div>
+            <div class="col">
+              <div class="img-fluid my-3">
+                <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fdong-test%2F8e7d65915ad1bfdd12d68c975a7a14ab7cb6b45c" alt="">
+              </div>
+              <div>윌리엄 새들러</div>
+              <div class="text-dark text-opacity-50">출연</div>
+            </div>
+            <div class="col">
+              <div class="img-fluid my-3">
+                <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F2217504452CE159F28" alt="">
+              </div>
+              <div>클랜시 브라운</div>
+              <div class="text-dark text-opacity-50">출연</div>
+            </div>
+            <div class="col">
+              <div class="img-fluid my-3">
+                <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F126F1B10AE07401E31" alt="">
+              </div>
+              <div>길 벨로우스</div>
+              <div class="text-dark text-opacity-50">출연</div>
+            </div>
+          </div>
+        </div>
+        <!-- 영상/포토 -->
+        <div class="my-5">
+          <div class="d-flex justify-content-between border-bottom border-1 py-3">
+            <h4 class="">영상/포토</h4>
+            <a href="https://movie.daum.net/moviedb/contents?movieId=1368" class="badge rounded-pill text-bg-secondary text-decoration-none fs-5">더보기 ></a>
+          </div>
+          <div class="row row-cols-4">
+            <div class="col-2">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 출연/제작 -->
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="1">
+        <div class="py-5">
+          <h3 class="fw-bold border-bottom border-1 py-3">감독</h3>
+        </div>
+        <div class="row row-cols-3">
+          <div class="col d-flex">
+            <div class="me-4">
+              <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F15404110ADFC72D333" alt="">
+            </div>
+            <div class="me-4">
+              <p class="text-primary text-bolder fs-5 mb-0">프랭크 다라본트</p>
+              <p class="mb-0">Frank Darabont</p>
+            </div>
+          </div>
+        </div>
+        <!-- 주연 -->
+        <div class="py-5">
+          <h3 class="fw-bold border-bottom border-1 py-3">주연</h3>
+        </div>
+        <div class="row row-cols-3">
+          <div class="col d-flex">
+            <div class="me-4">
+              <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F140D7C10ADF8435D0C" alt="">
+            </div>
+            <div class="me-4">
+              <p class="text-primary text-bolder fs-5 mb-0">팀 로빈스</p>
+              <p class="mb-0">Tim Robbins</p>
+              <p class="text-dark text-opacity-50 mb-0">앤디 듀프레인 역</p>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div class="me-4">
+              <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Ffae5ef8b0d92cead2954dad9521386e2db445312" alt="">
+            </div>
+            <div class="me-4">
+              <p class="text-primary text-bolder fs-5 mb-0">모건 프리먼</p>
+              <p class="mb-0">Morgan Freeman</p>
+              <p class="text-dark text-opacity-50 mb-0">레드 (엘리스 보이드 레딩) 역</p>
+            </div>
+          </div>
+        </div>
+        <!-- 출연 -->
+        <div class="py-5">
+          <h3 class="fw-bold border-bottom border-1 py-3">출연</h3>
+        </div>
+        <div class="row row-cols-3">
+          <div class="col d-flex mb-4">
+            <div class="me-4">
+              <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F156B8D10B16CC9264C" alt="">
+            </div>
+            <div class="me-4">
+              <p class="text-primary text-bolder fs-5 mb-0">밥 건튼</p>
+              <p class="mb-0">Bob Gunton</p>
+              <p class="text-dark text-opacity-50 mb-0">워든 노튼 소장 역</p>
+            </div>
+          </div>
+          <div class="col d-flex mb-4">
+            <div class="me-4">
+              <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fdong-test%2F8e7d65915ad1bfdd12d68c975a7a14ab7cb6b45c" alt="">
+            </div>
+            <div class="me-4">
+              <p class="text-primary text-bolder fs-5 mb-0">윌리엄 새들러</p>
+              <p class="mb-0">William Sadler</p>
+              <p class="text-dark text-opacity-50 mb-0">헤이우드 역</p>
+            </div>
+          </div>
+          <div class="col d-flex mb-4">
+            <div class="me-4">
+              <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F2217504452CE159F28" alt="">
+            </div>
+            <div class="me-4">
+              <p class="text-primary text-bolder fs-5 mb-0">클랜시 브라운</p>
+              <p class="mb-0">Clancy Brown</p>
+              <p class="text-dark text-opacity-50 mb-0">하들리 역</p>
+            </div>
+          </div>
+          <div class="col d-flex mb-4">
+            <div class="me-4">
+              <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F126F1B10AE07401E31" alt="">
+            </div>
+            <div class="me-4">
+              <p class="text-primary text-bolder fs-5 mb-0">길 벨로우스</p>
+              <p class="mb-0">Gil Bellows</p>
+              <p class="text-dark text-opacity-50 mb-0">토미 역</p>
+            </div>
+          </div>
+          <div class="col d-flex mb-4">
+            <div class="me-4">
+              <img class="rounded-4" src="https://img1.daumcdn.net/thumb/C116x168/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fcfile%2F126F1B10AE12A6600D" alt="">
+            </div>
+            <div class="me-4">
+              <p class="text-primary text-bolder fs-5 mb-0">마크 롤스톤</p>
+              <p class="mb-0">Mark Rolston</p>
+              <p class="text-dark text-opacity-50 mb-0">보그스 다이아몬드 역</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 영상/포토 -->
+      <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="2">
+        <div class="py-5">
+          <h3 class="fw-bold border-bottom border-1 py-3">예고편</h3>
+        </div>
+        <div class="embed-responsive">
+          <iframe width="1200" height="800" src="https://www.youtube-nocookie.com/embed/v7vtswbmJ0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="3">...</div>
+    </div>
+  </section>
+
+  <footer class="py-5 bg-white text-center position-relative bottom-0 w-100">
+    Copyright © Web-Bootstrap PJT, by 2022 1-12 황지선, 문상희
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</body>
+</html>
