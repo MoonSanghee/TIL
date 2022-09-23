@@ -1,12 +1,11 @@
+# 18870
 # n = int(input())
-# li = []
-# earn = [0 for _ in range(n + 1)]
+# li = list(map(int, input().split()))
+# new = sorted(list(set(li)))
+# di = dict()
+# for i in range(len(new)):
+#     if new[i] not in di:
+#         di[new[i]] = i
 # for i in range(n):
-#     li.append(list(map(int, input().split())))
-# for i in range(n):
-#     for j in range(i + li[i][0], n + 1):
-#         if earn[j] < earn[i] + li[i][1]:
-#             earn[j] = earn[i] + li[i][1]
-
-# print(earn[-1])
-
+#     li[i] = di[li[i]]
+# print(li)
