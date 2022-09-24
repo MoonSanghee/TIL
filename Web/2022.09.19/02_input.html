@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input</title>
+</head>
+<body>
+  <p id="main"></p>
+
+  <form action="#">
+    <label for="my-text-input">내용을 입력하세요.</label>
+    <input id="my-text-input" type="text"></input>
+  </form>
+  <script>
+    const myTextInput = document.querySelector('#my-text-input')
+    myTextInput.addEventListener('input', function (e) {
+      const myPtag = document.querySelector('#main')
+      myPtag.innerText = event.target.value
+      console.log(e.target.value)
+    })
+  </script>
+  
+</body>
+</html>

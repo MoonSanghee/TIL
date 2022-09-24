@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>비밀번호확인</title>
+</head>
+<body>
+
+
+  <form id="form" action="gogo">
+    비밀번호 : <input type="password" name="password" id="password">
+    비밀번호확인 : <input type="password" name="password_confirmation" id="password_confirmation">
+    <button type="submit">제출</button>
+  </form>
+
+  <script>
+    const form = document.querySelector('#form')
+    form.addEventListener('submit', function(event) {
+      event.preventDefault()
+      // FormData 객체는 요소를 form
+      const formData = new FormData(form)
+      console.log(formData) // 별도의 객체여서 조회 X. 반복하면됨
+      console.log(formData.get('password'))
+      console.log(formData.get('password_confirmation'))
+      const p1 = formData.get('password')
+      const p2 = formData.get('password_confirmation')
+      if(p1.length < 8) {
+          alert('입력한 글자가 8글자 이상이어야 합니다.');
+          return false;
+      }
+      
+      if( p1 != p2 ) {
+        alert("비밀번호가 일치하지 않습니다");
+        return false;
+      } 
+    })
+    
+  </script>
+</body>
+</html>
