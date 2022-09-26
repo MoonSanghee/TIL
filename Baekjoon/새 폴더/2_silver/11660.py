@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 n, m = map(int, input().split())
 maps = [[0] * (n + 1)]
 for i in range(n):
