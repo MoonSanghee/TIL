@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center my-5">글 수정</h1>
+<!-- <form action="{% url 'todos:update' todo.pk %}">
+  할 일<input type="text" name="content" value="{{ todo.content }}">
+  중요도<input type="number" name="priority" value="{{ todo.priority }}">
+  마감일<input type="date" name="deadline" value="{{ todo.deadline }}">
+  완료여부<input type="text" name="completed" value="{{ todo.completed }}">
+  <input type="submit">
+</form> -->
+<div class="container">
+  <form class="py-5" action="{% url 'todos:create' %}">
+    <div class="input-group mb-3">
+      <span class="input-group-text">할 일</span>
+      <input class="form-control" type="text" name="content" maxlength="80">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">우선 순위</span>
+      <input class="form-control" type="number" name="priority" min="1" max="5">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">마감 기한</span>
+      <input class="form-control" type="date" name="deadline">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">완료여부</span>
+      <input class="form-control" type="text" name="deadline">
+    </div>
+    <button class="btn btn-outline-primary w-100 mb-5" type="submit">할 일 추가</button>
+  </form>
+
+</div>
+{% endblock %}

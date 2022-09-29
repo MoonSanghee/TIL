@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center m-5">해야할 일들</h1>
+<div class="container">
+  <form class="py-5" action="{% url 'todos:create' %}">
+    <div class="input-group mb-3">
+      <span class="input-group-text">할 일</span>
+      <input class="form-control" type="text" name="content" maxlength="80">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">우선 순위</span>
+      <input class="form-control" type="number" name="priority" min="1" max="5">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">마감 기한</span>
+      <input class="form-control" type="date" name="deadline">
+    </div>
+    <button class="btn btn-outline-primary w-100 mb-5" type="submit">할 일 추가</button>
+  </form>
+  
+  <table class="table">
+    <thead>
+      <tr class="border-bottom">
+        <th scope="col">우선 순위</th>
+        <th scope="col">할 일</th>
+        <th scope="col">생성 날짜</th>
+        <th scope="col">마감 기한</th>
+        <th scope="col">진행 상태</th>
+        <th scope="col">상태 변경</th>
+        <th scope="col">수정</th>
+        <th scope="col">삭제</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in todos %}
+        <tr scope="row" class="border-bottom">
+          <th>
+            {{ todo.priority }}
+          </th>
+          <th>
+            {{ todo.content }}
+          </th>
+          <th>
+            {{ todo.created_at }}
+          </th>
+          <th>
+            {{ todo.deadline }}
+          </th>
+          {% if todo.completed == True%}
+          <th class="align-middle fw-bolder">완료</th>
+          {% else %}
+          <th class="align-middle fw-bolder">미완료</th>
+          {% endif %}
+          <th>
+            <a href="{% url 'todos:change' todo.pk %}" class="btn btn-primary fw-bold">변경</a>
+          </th>
+          <th>
+            <a href="{% url 'todos:edit' todo.pk %}" class="btn btn-success fw-bold">수정</a>
+          </th>
+          <th>
+            <a href="{% url 'todos:delete' todo.pk %}" class="btn btn-danger fw-bold">삭제</a>
+          </th>
+        </tr>
+      {% endfor %}
+      <tr>
+      </tr>
+    </tbody>
+    </table>
+
+</div>
+  {% endblock %}
