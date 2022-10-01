@@ -34,6 +34,7 @@
     </thead>
     <tbody>
       {% for todo in todos %}
+      {% if todo.completed == False%}
         <tr scope="row" class="border-bottom">
           <th>
             {{ todo.priority }}
@@ -47,11 +48,7 @@
           <th>
             {{ todo.deadline }}
           </th>
-          {% if todo.completed == True%}
-          <th class="align-middle fw-bolder">완료</th>
-          {% else %}
           <th class="align-middle fw-bolder">미완료</th>
-          {% endif %}
           <th>
             <a href="{% url 'todos:change' todo.pk %}" class="btn btn-primary fw-bold">변경</a>
           </th>
@@ -62,11 +59,37 @@
             <a href="{% url 'todos:delete' todo.pk %}" class="btn btn-danger fw-bold">삭제</a>
           </th>
         </tr>
+      {% else %}
+        <tr scope="row" class="border-bottom">
+          <th><del>
+            {{ todo.priority }}
+          </del></th>
+          <th><del>
+            {{ todo.content }}
+          </del></th>
+          <th><del>
+            {{ todo.created_at }}
+          </del></th>
+          <th><del>
+            {{ todo.deadline }}
+          </del></th>
+          <th class="align-middle fw-bolder"><del>완료</del></th>
+          <th><del>
+            <a href="{% url 'todos:change' todo.pk %}" class="btn btn-primary fw-bold">변경</a>
+          </del></th>
+          <th><del>
+            <a href="{% url 'todos:edit' todo.pk %}" class="btn btn-success fw-bold">수정</a>
+          </del></th>
+          <th><del>
+            <a href="{% url 'todos:delete' todo.pk %}" class="btn btn-danger fw-bold">삭제</a>
+          </del></th>
+        </tr>
+      {% endif %}
       {% endfor %}
       <tr>
       </tr>
     </tbody>
-    </table>
+  </table>
 
-</div>
+  </div>
   {% endblock %}

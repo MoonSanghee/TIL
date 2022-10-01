@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="container my-5">
+
+
+    <form action="{% url 'todos:create' %} ">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">제목</label>
+            <input type="text" class="form-control" maxlength="80" name="title" placeholder="제목을 입력해 주세요">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">내용</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="content" placeholder="내용을 입력해 주세요">
+        </div>
+        <div class="d-flex flex-row-reverse mx-3">
+            <button type="submit" class="btn btn-primary mx-2">작성 완료</button>
+            <a href="{% url 'todos:index'  %}" class="btn btn-secondary">취소</a>
+        </div>
+    </form>
+    <hr>
+
+</section>
+
+
+
+
+
+
+
+
+
+{% endblock %}

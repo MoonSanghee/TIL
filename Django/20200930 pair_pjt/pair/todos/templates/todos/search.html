@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<header class="main p-5 text-center  fw-bolder text-light"
+    style="font-size:8rem; display: flex; justify-content: space-around;align-items: center; ">리뷰조아
+</header>
+
+<div class="upper_main">
+    <section class="container bg-white pt-4 pb-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">리뷰 번호</th>
+                    <th scope="col">리뷰 목록</th>
+                    <th scope="col">작성 시간</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                <tr>
+                    <th>{{review.id}}</th>
+                    <th>
+                        <a href="{% url 'todos:detail' review.pk %}" type="submit">{{review.title}}</a>
+                    </th>
+                    <th>{{review.updated_at}}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="{% url 'todos:new'%}" class="d-flex flex-row-reverse mx-3">
+            <button type="submit" class="btn btn-primary ms-4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path
+                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                </svg>새 글 쓰기</button>
+            </form>
+            <form class="input-group" action="{% url 'todos:search' %}">
+                <input class="input-group-text" name="title" placeholder="제목을 입력해 주세요">
+                <input type="submit" class="btn btn-outline-dark" value="검색">
+            </form>
+    </section>
+
+</div>
+<footer class="upper_main py-5 text-light text-center fs-3">
+    Copyright © 문상희,이주현 2022-09-30
+</footer>
+
+
+
+{% endblock %}
