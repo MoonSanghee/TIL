@@ -1,13 +1,17 @@
-import heapq, sys
-input = sys.stdin.readline
-n = int(input())
-li = []
-for _ in range(n):
-    com = int(input())
-    if com == 0:
-        if li:
-            print(heapq.heappop(li))
-        else:
-            print(0)
+word = input()
+stack = []
+num = 0
+cut = 0
+for i in word:
+    if i == '(':
+        cut = 0
+        stack.append(i)
     else:
-        heapq.heappush(li, com)
+        if cut == 1:
+            num += 1
+            stack.pop()
+        else:
+            stack.pop()
+            num += len(stack)
+            cut = 1
+print(num)
