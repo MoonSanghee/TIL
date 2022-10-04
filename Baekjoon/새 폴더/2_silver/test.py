@@ -1,17 +1,8 @@
-word = input()
-stack = []
-num = 0
-cut = 0
-for i in word:
-    if i == '(':
-        cut = 0
-        stack.append(i)
-    else:
-        if cut == 1:
-            num += 1
-            stack.pop()
-        else:
-            stack.pop()
-            num += len(stack)
-            cut = 1
-print(num)
+# from itertools import combinations
+# n, m = map(int, input().split())
+# nl = [i for i in range(1, n + 1)]
+# li = combinations(nl, m)
+# for i in li:
+#     print(*i)
+# combinations 메서드 사용
+
