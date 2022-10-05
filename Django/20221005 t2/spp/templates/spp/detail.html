@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ review.pk }}번 게시글 <span style="color: brown;">{{ review.title }}</span></h1>
+<p>{{ review.created_at }} | {{ review.updated_at }}</p>
+<p>{{ review.content }} </p>
+<a href="{% url 'spp:update' review.pk %}">수정할래~</a>
+<a style="color: red;" href="{% url 'spp:delete' review.pk %}">삭제할래!</a>
+{% endblock %}

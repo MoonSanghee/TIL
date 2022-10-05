@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<h1>안녕하세요</h1>
+<img src="{% static 'images/apparel.jpeg' %}" alt="">
+<a href="{% url 'spp:create' %}">글 쓰기</a>
+{% for review in reviews %}
+<h3><a href="{% url 'spp:detail' review.pk %}">{{ review.title }}</a></h3>
+<p>{{ review.created_at }}</p>
+{% endfor %}
+{% endblock %}

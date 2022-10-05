@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>글쓰기</h1>
+
+<form action="{% url 'spp:create' %}" method="POST">
+  {% load django_bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+  {% csrf_token %}
+  {% bootstrap_form review_form %}
+  {% bootstrap_button button_type="submit" content="글쓰기" %}
+</form>
+{% endblock %}
