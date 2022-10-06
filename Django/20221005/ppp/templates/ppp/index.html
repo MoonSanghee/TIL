@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center m-3">
+  <a href="{% url 'ppp:create' %}" type="button" class="btn btn-outline-info">글 쓰기</a>
+</div>
+<hr>
+
+{% for review in reviews %}
+<div class="m-5 p-3 border border-3 border-info rounded">
+  <h3><a href="{% url 'ppp:detail' review.pk %}"> 제목 : {{review.title}}</a></h3>
+  <p>만든날짜 : {{review.created_at}} | 수정날짜 : {{review.updated_at}}</p>
+  <!-- <a href="{% url 'ppp:detail' review.pk %}">수정</a> -->
+</div>
+{% endfor%}
+{% endblock %}

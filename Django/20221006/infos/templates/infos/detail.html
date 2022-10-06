@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="my-3 p-3 card bg-light">{{ info.title }}</h3>
+<p class="my-3 p-3 card bg-light">{{ info.summary }}</p>
+<p class="my-3 p-3 card bg-light">{{ info.running_time }}</p>
+  
+<a href="{% url 'infos:update' info.pk %}" class="btn btn-primary m-2">글 수정</a>
+<a href="{% url 'infos:delete' info.pk %}" class="btn btn-danger m-2">글 삭제</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content  %}
+
+  <h1 class="my-5">안녕하세요</h1>
+  {% for info in infos %}
+  <h2 class="card p-3 my-3"><a style="text-decoration: none;" href="{% url 'infos:detail' info.pk %}">{{ info.title }}</a></h2>
+  {% endfor %}
+  
+{% endblock  %}

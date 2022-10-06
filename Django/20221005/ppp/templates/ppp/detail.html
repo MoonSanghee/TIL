@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container m-5">
+  <h1 class="m-3">{{ review.title }}</h1>
+  <p>{{ review.content }}</p>
+  <p>{{ review.updated_at }}</p>
+  <a class="btn btn-primary" href="{% url 'ppp:update' review.pk %}">수정</a>
+  <a class="btn btn-danger" href="{% url 'ppp:delete' review.pk %}">삭제</a>
+</section>
+{% endblock %}

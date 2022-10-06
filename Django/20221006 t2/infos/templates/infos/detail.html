@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="card m-3 p-3">
+    <span id="title" name="title">제목 : {{ info.title }}</span>
+  </div>
+  <div class="card m-3 p-3">
+    <span id="director" name="director">감독 : {{ info.director }}</span>
+  </div>
+  <div class="card m-3 p-3">
+    <span id="opening_date" name="opening_date">개봉일 : {{ info.opening_date }}</span>
+  </div>
+  <div class="card m-3 p-3">
+    <span id="running_time" name="running_time">러닝타임 : {{ info.running_time }}분</span>
+  </div>
+  <div class="card m-3 p-3">
+    <label class="mb-3" for="summary">줄거리 :</label>
+    <textarea class="border-0 " name="summary" id="summary" cols="30" rows="10">{{ info.summary }}</textarea>
+  </div>
+  <a class="btn btn-danger" href="{% url 'infos:delete' info.pk %}">삭제</a>
+  <a class="btn btn-primary" href="{% url 'infos:update' info.pk %}">수정</a>
+  {%endblock  %}

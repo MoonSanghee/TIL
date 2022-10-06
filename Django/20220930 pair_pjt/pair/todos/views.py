@@ -55,4 +55,4 @@ def search(request):
         'reviews': reviews
     }
     
-    return render(request,"todos/search.html",context)
+    return render(request,"todos/index.html",context)

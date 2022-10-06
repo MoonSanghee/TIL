@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="btn btn-primary" href="{% url 'infos:create' %}">새 글 쓰기</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">제목</th>
+      <th scope="col">감독</th>
+      <th scope="col">개봉일</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for info in infos %}
+    <tr>
+      <td><a href="{% url 'infos:detail' info.pk %}">{{ info.title }}</a></td>
+      <td>{{ info.director }}</td>
+      <td>{{ info.opening_date }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock  %}

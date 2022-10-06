@@ -1,0 +1,5 @@
+body {
+  background-image: url("{% static 'images/minions.jpg' %}");
+  background-repeat: repeat-y;
+  background-size: 100%
+}
