@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form class="mt-3" action="{% url 'reviews:create' %}" method="POST">
+    {% csrf_token %}
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_form review_form %}
+    <div class="d-flex flex-row-reverse m-3">
+      <input type="submit" class="btn btn-outline-dark text-decoration-none m-3" value="글쓰기">
+    </div>
+  </form>
+{% endblock %}

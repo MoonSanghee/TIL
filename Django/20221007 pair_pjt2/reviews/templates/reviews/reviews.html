@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <a href="{% url 'reviews:create' %}" class="fixed-top">
+    <img class="pencil" src="{% static 'reviews/images/pencil.png' %}" alt="">
+  </a>
+  {% for review in reviews %}
+    <div class="mt-5">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{% url 'reviews:detail' review.pk %}" class="text-decoration-none fw-bold b">
+              {{ review.title }}
+            </a>
+          </h5>
+          <div>
+            <p class="card-text">
+              {{ review.movie_name }}
+            </p>
+            <p class="card-text">{{ review.grade }}</p>
+          </div>
+
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{ review.updated_at }}</small>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  <h1 class="mt-5 text-center">{{ text }}</h1>
+{% endblock %}

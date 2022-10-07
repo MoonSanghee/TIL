@@ -1,0 +1,39 @@
+.log-size {
+  height: 4rem;
+}
+
+.nav-bg {
+  background: rgb(255,171,0);
+  background: linear-gradient(0deg, rgba(255,171,0,1) 0%, rgba(255,213,0,1) 70%);
+}
+
+.a {
+  color: #283d3b;
+  transition: color .5s;
+  text-decoration: none;
+}
+
+.a:hover {
+  color:rgb(159, 203, 149);
+}
+
+.main {
+  height: 100vh;
+  background-image: url('../images/main.png');
+}
+
+.b {
+  color : black;
+  transition: color .3s;
+}
+
+.b:hover {
+  color: grey;
+}
+
+.pencil {
+  position: absolute;
+  top : 10rem;
+  right : 10rem;
+  height: 5rem;
+}
