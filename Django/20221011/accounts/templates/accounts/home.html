@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h1 class="text-center m-5">Home</h1>
+  <form action="{% url 'accounts:signup' %}">
+    <button class="btn btn-primary form-control m-3" type="submit">회원가입</button>
+  </form>
+  <form action="{% url 'accounts:userlist' %}">
+    <button class="btn btn-primary form-control m-3" type="submit">유저목록</button>
+  </form>
+</div>
+{% endblock  %}
