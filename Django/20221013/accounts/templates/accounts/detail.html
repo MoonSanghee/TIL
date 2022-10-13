@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+<section class="container">
+<h1>{{ user.username }}</h1>
+<p>E메일 : {{ user.email }}</p>
+<a type="button" class="btn btn-secondary" href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
+<a type="button" class="btn btn-secondary" href="{% url 'accounts:update' %}">회원정보 수정</a>
+</section>
+{% endblock content %} 

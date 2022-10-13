@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+<table class="container m-5">
+  <thead class="border-bottom">
+    <th>유저번호</th>
+    <th>유저이름</th>
+    <th>가입일</th>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <tr  class="border-bottom">
+      <td>{{ user.pk }}</td>
+      <td><a class="text-decoration-none text-dark" href="{% url 'accounts:info' user.pk %}">{{ user.username }}</a></td>
+      <td>{{ user.date_joined }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %} 
