@@ -14,23 +14,23 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-dark">
+  <nav class="navbar navbar-expand-lg bg-dark px-5">
     <div class="container-fluid">
       <a class="navbar-brand btn text-success" href="{% url 'accounts:index' %}">Home</a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-          {% if request.user.is_authenticated %}
-          <li class="nav-item nav-link">
-            <span class="text-danger"><a class="text-decoration-none" href="{% url 'accounts:detail' user.pk %}">{{ request.user }}</a>님</span>
-            <a class="text-decoration-none" href="{% url 'accounts:logout' %}">로그아웃</a>
-          </li>
-          {% else %}
-          <li class="nav-item nav-link">
-            <a class="text-decoration-none text-light fw-bold btn btn-info me-3" href="{% url 'accounts:signup' %}">회원가입</a>
-            <a class="text-decoration-none text-light fw-bold btn btn-info" href="{% url 'accounts:login' %}">로그인</a>
-          </li>
-          {% endif %}
-        </ul>
+      <a class="navbar-brand btn text-light" href="{% url 'articles:index' %}">리뷰 보기</a>
+      <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+        {% if request.user.is_authenticated %}
+        <li class="nav-item nav-link ">
+          <span class="btn text-danger"><a class="text-decoration-none" href="{% url 'accounts:detail' user.pk %}">{{ request.user }}</a>님</span>
+          <a class="btn text-light text-decoration-none" href="{% url 'accounts:logout' %}">로그아웃</a>
+        </li>
+        {% else %}
+        <li class="nav-item nav-link ">
+          <a class="text-decoration-none text-light fw-bold btn btn-info me-3" href="{% url 'accounts:signup' %}">회원가입</a>
+          <a class="text-decoration-none text-light fw-bold btn btn-info" href="{% url 'accounts:login' %}">로그인</a>
+        </li>
+        {% endif %}
+      </ul>
 
         <!-- <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

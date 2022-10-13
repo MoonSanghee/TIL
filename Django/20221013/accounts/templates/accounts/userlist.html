@@ -8,7 +8,7 @@
     <th>가입일</th>
   </thead>
   <tbody>
-    {% for user in users %}
+    {% for user in question_list %}
     <tr  class="border-bottom">
       <td>{{ user.pk }}</td>
       <td><a class="text-decoration-none text-dark" href="{% url 'accounts:info' user.pk %}">{{ user.username }}</a></td>
@@ -17,4 +17,40 @@
     {% endfor %}
   </tbody>
 </table>
+
+
+<ul class="pagination justify-content-center">
+  <!-- 이전페이지 -->
+  {% if question_list.has_previous %}
+  <li class="page-item">
+      <a class="page-link" href="?page={{ question_list.previous_page_number }}">이전</a>
+  </li>
+  {% else %}
+  <li class="page-item disabled">
+      <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+  </li>
+  {% endif %}
+  <!-- 페이지리스트 -->
+  {% for page_number in question_list.paginator.page_range %}
+  {% if page_number == question_list.number %}
+  <li class="page-item active" aria-current="page">
+      <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+  </li>
+  {% else %}
+  <li class="page-item">
+      <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+  </li>
+  {% endif %}
+  {% endfor %}
+  <!-- 다음페이지 -->
+  {% if question_list.has_next %}
+  <li class="page-item">
+      <a class="page-link" href="?page={{ question_list.next_page_number }}">다음</a>
+  </li>
+  {% else %}
+  <li class="page-item disabled">
+      <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+  </li>
+  {% endif %}
+</ul>
 {% endblock content %} 

@@ -6,6 +6,7 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 from .models import User
+from django.core.paginator import Paginator
 
 # Create your views here.
 def index(request):
@@ -49,10 +50,11 @@ def detail(request, pk):
     return render(request, 'accounts/detail.html', context)
 
 def userlist(request):
+    page = request.GET.get('page', '1')  # 페이지
     users = User.objects.all()
-    context ={
-        'users': users
-    }
+    paginator = Paginator(users, 3)  # 페이지당 10개씩 보여주기
+    page_obj = paginator.get_page(page)
+    context = {'question_list': page_obj}
     return render(request, 'accounts/userlist.html', context)
 
 @login_required
