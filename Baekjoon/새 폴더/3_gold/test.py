@@ -1,10 +1,26 @@
-n, k = map(int, input().split())
-dp = [0 for _ in range(k + 1)]
-items = []
-for i in range(n):
-    items.append(list(map(int,input().split())))
-for item in items:
-    w, v = item
-    for i in range(k, w - 1, -1):
-        dp[i] = max(dp[i], dp[i - w] + v)
-print(dp[-1])
+import sys
+input = sys.stdin.readline
+
+r, c = map(int, input().split())
+maps = [list(input()) for _ in range(r)]
+
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
+alpha = set()
+alpha.add(maps[0][0])
+cnt = 0
+
+def dfs(x, y, z):
+    global cnt
+    cnt = max(cnt, z)
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if nx in range(r) and ny in range(c) and maps[nx][ny] not in alpha:
+            alpha.add(maps[nx][ny])
+            dfs(nx, ny, z + 1)
+            alpha.remove(maps[nx][ny])
+    return
+
+dfs(0, 0, 1)
+print(cnt)
