@@ -1,5 +1,16 @@
-a = []
-for i in range(10):
-    a.append(list(map(int, input().split())))
-a.sort(key=lambda x:x[0] + x[1])
-print(a)
+n,m = map(int, input().split())
+nums = list(map(int, input().split()))
+nums.sort()
+
+li = []
+def dfs(a):
+    if len(li) == m:
+        return print(*li)
+    for i in range(a + 1, n):
+        li.append(nums[i])
+        dfs(i)
+        li.pop()
+for i in range(n):
+    li.append(nums[i])
+    dfs(i)
+    li.pop()
