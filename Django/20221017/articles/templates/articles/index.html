@@ -1,0 +1,13 @@
+{% block content %}
+<h1>안녕하세요</h1>
+<a href="{% url 'articles:create'%}">글 쓰기</a>
+
+{% for article in articles %}
+<a href="{% url 'articles:detail' article.pk %}">
+    <p> {{article.title}} </p>
+</a>
+{% if article.thumbnail %}
+<img src="{{ article.thumbnail.url }}" alt="{{ article.thumbnail }}">
+{% endif %}
+{% endfor %}
+{% endblock content %}

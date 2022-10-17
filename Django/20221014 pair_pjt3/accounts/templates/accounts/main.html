@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="d-flex flex-column justify-content-center align-items-center view-size">
+    <div>
+      <a href="{% url 'accounts:login' %}" class="btn btn-light me-2">로그인</a>
+      <a href="{% url 'accounts:signup' %}" class="btn btn-light">회원가입</a>
+    </div>
+    <a href="{% url 'accounts:index' %}" class="btn btn-dark px-5 my-3">회원목록</a>
+  </div>
+
+{% endblock content %}

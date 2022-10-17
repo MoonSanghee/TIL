@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="card border border-2 card-box p-4 mt-5">
+      <h2>{{ account_detail.username }}</h2>
+      <hr>
+      <h4>{{ account_detail.email }}</h4>
+      {% if account_detail.last_login == None %}
+        <p>
+          <span class="fw-bolder">최근 접속 :</span>
+        </p>
+      {% else %}
+        <p>
+          <span class="fw-bolder">최근 접속 :</span>
+          {{ account_detail.last_login }}
+        </p>
+      {% endif %}
+      <a href="{% url "accounts:update" account_detail.pk %}" class="text-center mt-2"><input type="button" value="회원 정보 수정" class="btn btn-success"></a>
+    </div>
+  </div>
+
+{% endblock content %}
