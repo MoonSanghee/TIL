@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container">
+  <h1 class="text-center my-3" style="font-size: 10rem;">
+    오타 대잔치....
+  </h1>
+  <div class="row">
+    {% for article in articles %}
+    <div class="col-3 my-3">
+      <div class="card">
+        {% if article.image %}
+        <img class="rounded-3" src="{{ article.thumbnail.url }}">
+        {% else %}
+        <img class="rounded-3" src="https://dummyimage.com/1200x960/000000/c4c4c4" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ article.title }}</h5>
+          <p class="text-muted"><a class="text-decoration-none" href="{% url 'accounts:detail' article.user.pk %}">{{ article.user.username }}</a></p>
+          <a href="{% url 'articles:detail' article.pk %}" class="btn btn-outline-primary my-3">자세히</a>
+        </div>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+</section>
+
+{% endblock content %}
