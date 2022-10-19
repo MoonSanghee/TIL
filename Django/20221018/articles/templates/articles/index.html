@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center m-5 p-5">어서오세요</h1>
+<div class="container">
+  <a class="btn btn-primary " href="{% url 'articles:create' %}">글쓰기</a>
+  {% for article in articles %}
+  <div class="m-4">
+    <a class="text-decoration-none text-black fw-bold" href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a>    
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
