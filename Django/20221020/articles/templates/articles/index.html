@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container">
+  <div class="row">
+    {% for article in articles %}
+    <div class="col-3 my-3">
+      <div class="card">
+        {% if article.image %}
+        <img class="rounded-3" src="{{ article.thumbnail.url }}">
+        {% else %}
+        <img class="rounded-3" src="https://www.dummyimage.com/240x300/000000/ffffff" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ article.title }}</h5>
+          <p class="text-muted"><a class="text-decoration-none" href="{% url 'accounts:detail' article.user.pk %}">{{ article.user.username }}</a></p>
+          <a href="{% url 'articles:detail' article.pk %}" class="btn btn-outline-primary my-3">자세히</a>
+        </div>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+</section>
+{% endblock content %}

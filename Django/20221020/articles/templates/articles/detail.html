@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %} 
+<div class="container">
+  <h1 class="border-bottom mb-3">{{ article.title }}</h1>
+  <h3 class="border-bottom mb-3"><a class="text-decoration-none text-dark" href="{% url 'accounts:detail' article.user.pk %}">{{ article.user.username }}</a></h3>
+  <p class="border-bottom mb-3">{{ article.updated_at|date:"y-m-d D" }}</p>
+  <p class="border-bottom mb-3">{{ article.content }} </p>
+  
+  {% if article.image %}
+  <img class="border-bottom mb-3" src="{{ article.image.url }}" alt="{{ article.image }}">
+  {% endif %}
+
+  {% if request.user == article.user %}
+  <p class="text-end mx-5">
+    <a class=" m-3 btn btn-dark" href="{% url 'articles:update' article.pk %}">수정하기</a>
+    <a class=" m-3 btn btn-danger" href="{% url 'articles:delete' article.pk %}">삭제하기</a>
+  </p>
+  {% endif %}
+  <h4 class="my-3">댓글</h4>
+  {% if request.user.is_authenticated %}
+  <form action="{% url 'articles:comment_create' article.pk %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form comment_form layout='inline'%}
+    {% bootstrap_button button_type="submit" content="OK" %}
+  </form>
+  {% endif %}
+  <hr>
+  {% for comment in comments %}
+  <div> {{ comment.content }} | {{ comment.user.username }}
+    <a class="btn btn-danger" href="{% url 'articles:comment_delete' article.pk comment.pk %}">삭제</a>
+  </div>
+  <hr>    
+  {% empty %}
+  <p>댓글이 없어요 ㅠ_ㅠ</p>
+  {% endfor %}
+  
+</div>
+
+</div>
+{% endblock %}
+
+<form class="my-2" action="{% url 'articles:comment_delete' article.pk comment.pk %}" method="POST">
+  {% csrf_token %}
+  <input class="btn btn-danger" type="submit" value="삭제">
+</form>
