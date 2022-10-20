@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+<h1>{{ article.title }}</h1>
+<p>{{ article.pk }}번 게시글</p>
+<h3>
+  <a href="{% url 'accounts:detail' article.user.pk %}">{{ article.user.username }}</a>
+</h3>
+<p>{{ article.created_at|date:"SHORT_DATETIME_FORMAT" }}
+  |
+  {{ article.updated_at|date:"y-m-d D" }}
+</p>
+{% if request.user.is_authenticated %}
+  {% if request.user in article.like_user.all %}
+    <i id="like-btn" data-article-id="{{ article.pk }}" class="bi bi-heart-fill fs-4" style="color: rgb(255, 29, 29);"></i>
+  {% else %}
+    <i id="like-btn" data-article-id="{{ article.pk }}" class="bi bi-heart fs-4"></i>
+  {% endif %}
+{% else %}
+  <a class="btn text-danger border-danger" href="{% url 'accounts:login' %}">로그인이 필요합니다.</a>
+{% endif %}
+<span id="like-count">{{ article.like_user.count }}</span>
+
+<p class="my-3 py-3 border-bottom">{{ article.content }}
+</p>
+{% if article.image %}
+  <img src="{{ article.image.url }}" alt="{{ article.image }}">
+{% endif %}
+
+{% if request.user == article.user %}
+  <p>
+    <a href="{% url 'articles:update' article.pk %}">수정하기</a>
+  </p>
+{% endif %}
+<h4 class="my-3">댓글</h4>
+{% if request.user.is_authenticated %}
+  <form id="comment-form" data-article-id="{{ article.pk }}">
+    {% csrf_token %}
+    {% bootstrap_form comment_form layout='inline'%}
+    <input type="submit" value="OK" class="btn btn-primary btn-md">
+  </form>
+{% endif %}
+<hr>
+<div id="comments">
+{% for comment in comments %}
+  <p>
+    {{ comment.user.username }}
+    |
+    {{ comment.content }}</p>
+    <hr>
+  <hr>
+  {% empty %}
+  <p>댓글이 없어요 ㅠ_ㅠ</p>
+{% endfor %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  const likeBtn = document.querySelector('#like-btn')
+  likeBtn.addEventListener('click', function (event) {
+    console.log(event.target.dataset)
+    axios({
+      method: 'get',
+      url: `/articles/${event.target.dataset.articleId}/likes/`
+    })
+    .then(response => {
+      console.log(response)
+      console.log(response.data)
+      if (response.data.isLiked === true) {
+        event.target.classList.add('bi-heart-fill')
+        event.target.classList.remove('bi-heart')
+      } else {
+        event.target.classList.add('bi-heart')
+        event.target.classList.remove('bi-heart-fill')
+      }
+      const likeCount = document.querySelector('#like-count')
+      likeCount.innerText = response.data.likeCount
+    })
+  })
+
+</script>
+<script>
+  const commentForm = document.querySelector('#comment-form')
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+  commentForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    axios({
+      method: 'post',
+      url: `/articles/${event.target.dataset.articleId}/comments/`,
+      Headers: {'X-CSRFToken': csrftoken},
+      data: new FormData(commentForm)
+    })
+    .then(response => {
+      console.log(response.data)
+      const comments = document.querySelector('#comments')
+      const p = document.createElement('p')
+      p.innerText = `${response.data.userName} | ${response.data.content}`
+      const hr = document.createElement('hr')
+      comments.append(p, hr) 
+      commentForm.reset()
+    })
+  })
+
+</script>
+{% endblock %}
