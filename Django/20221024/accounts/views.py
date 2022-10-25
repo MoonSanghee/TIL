@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth import login as auth_login
@@ -59,3 +59,15 @@ def update(request):
         'form': form
     }
     return render(request, 'accounts/update.html', context)
+
+def follow(request, pk):
+    if request.user.is_authenticated:
+        user = get_object_or_404(get_user_model(), pk=pk)
+        if user == request.user:
+            messages.warning(request, '스스로를 팔로우 할 수 없습니다,')
+            return redirect('accounts:detail', pk)
+        if user.followers.filter(pk=request.user.pk):
+            user.followers.remove(request.user)
+        else:
+            user.followers.add(request.user)
+        return redirect('accounts:detail', pk)
