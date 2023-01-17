@@ -1,56 +1,43 @@
-import sys
+import heapq, sys
+sys.setrecursionlimit(int(1e6))
 input = sys.stdin.readline
-sys.setrecursionlimit(10**6)
 
-import heapq
-
-# 정점의 개수 n, 간선의 개수 m
-n, m = map(int, input().split())
-
-# 시작 정점의 번호
-k = int(input())
-
-# 무한을 의미하는 INF
-INF = int(1e9)
-
-# 그래프 초기화
-graph = [[] * (n+1) for _ in range(n+1)]
-# 최단 거리 테이블을 모두 무한으로 초기화
-distance = [INF] * (n+1)
-
-# 간선 정보 입력
-for _ in range(m):
+v, e = map(int, input().split())
+s = int(input())
+# 간선의 개수와 시작점을 입력받아줍니다.
+graph = [[] for _ in range(v + 1)]
+for i in range(e):
     a, b, c = map(int, input().split())
-    # a->b가 c비용
-    graph[a].append((b, c))
+    graph[a].append([b, c])
+# 각 이동과 비용을 표시해줄 그래프를 받아줍니다.
 
+INF = int(1e9)
+distance = [INF] * (v + 1)
+# 각 점에 도달하는데 매우 많은 비용이 든다고 설정해둡니다.
 
 def dijkstra(start):
     q = []
-    # 시작 노드로 가기 위한 최단 경로는 0으로 설정하여, 큐에 삽입
     heapq.heappush(q, (0, start))
     distance[start] = 0
-
+    # 힙을 이용하여 시작점에서 거리가 0만큼 필요하고 시작점이라는것을 표시하여줍니다.
     while q:
-        # 가장 최단 거리가 짧은 노드에 대한 정보 꺼내기
         dist, now = heapq.heappop(q)
-        # 현재 노드가 이미 처리된 적이 있는 노드라면 무시
         if distance[now] < dist:
             continue
-        # 현재 노드와 연결된 다른 인접한 노드들을 확인
+        # 이미 방문한 지점이라면 넘어가줍니다.
         for i in graph[now]:
             cost = dist + i[1]
-            # 현재 노드를 거쳐서, 다른 노드로 이동하는 거리가 더 짧은 경우
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
+                # 현재 지점에서 이동 가능한 지점을 확인하며 이 지점에서 이동하였을 때
+                # 거리가 저장되어있는 거리보다 짧다면 값을 갱신하고 heapq에 넣어줍니다.
 
-# 다익스트라 알고리즘을 수행
-dijkstra(k)
-
-# 모든 노드로 가기 위한 최단 거리를 출력
-for i in range(1, n+1):
+dijkstra(s)
+# 출발점에서 시작하는 함수를 작동시켜줍니다.
+for i in range(1, v+1):
     if distance[i] == INF:
         print("INF")
     else:
         print(distance[i])
+    # 1부터 차례대로 도달하는데 필요한 비용을 확인해주고 갱신된 적이 없다면 INF를 출력해줍니다.
