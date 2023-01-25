@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 375px;
+  height: 815px;
+  background-color: #000000;
+  border-radius: 16px;
+  padding: 32px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.calculator > section {
+  width: 100%;
+}
+
+.screen {
+  height: 260px;
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+
+.keyboard {
+  height: 460px;
+}
+
+.list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 8px;
+}
+
+.list > .item:first-of-type > div {
+  background-color: #475c6b;
+  color: #ffffff;
+}
+
+.list > .item {
+  list-style: none;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 8px;
+}
+
+.item > div:not(:last-of-type) {
+  color: #000000;
+}
+
+.list > .item:last-of-type > div:last-of-type {
+  background-color: #ef7b5a;
+}
+
+.item > div:last-of-type {
+  background-color: #475c6b;
+}
+
+.item > div {
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+  background-color: #efe2d0;
+  border-radius: 16px;
+
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item > .zero {
+  flex-grow: 2;
+}
