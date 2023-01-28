@@ -13,15 +13,15 @@ while q:
         # 원하는 자리에 도착하였다면 비용이 얼마나 들었는지 출력해줍니다.
         break
     if (number, number) not in visited:
-        visited[(number, copy)] = visited[(number, copy)] + 1
+        visited[(number, number)] = visited[(number, copy)] + 1
         q.append((number, number))
     if (number - 1, copy) not in visited:
         visited[(number - 1, copy)] = visited[(number, copy)] + 1
         q.append((number - 1, copy))
-    if (number + copy, copy) not in visited[(number, copy)]:
+    if (number + copy, copy) not in visited:
         visited[(number + copy, copy)] = visited[number, copy] + 1
         q.append((number + copy, copy))
-    # 현재 가지고 있는 이모티콘의 갯수만큼 복사하는것과 현재 카피보드를 유지한 채로
-    # 이모티콘을 하나 지우는것 현재 이모티콘에 카피보드의 이모티콘만큼 더해주는 조건을
+    # 현재 가지고 있는 카피보드의 이모티콘의 개수를 현재 이모티콘 개수로 갱신하는것과 현재 카피보드를 
+    # 유지한 채로 이모티콘을 하나 지우는것 현재 이모티콘에 카피보드의 이모티콘만큼 더해주는 조건을
     # 방문한 적 있는지 확인해주고 새로 방문해주어야하면 큐에 값을 넣어주고 이동 전 거리보다
     # 1만큼 비용이 든다고 확인해줍니다.
