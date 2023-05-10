@@ -1,20 +1,23 @@
 t = int(input())
 for tc in range(t):
     command = input()
-    cursor = 0
-    word = []
+    left, right = [], []
     for i in command:
-        if i =='<':
-            if cursor > 0:
-                cursor -= 1
+        if i == '<':
+            if left:
+                l = left.pop()
+                right.append(l)
         elif i == '>':
-            if cursor < len(word):
-                cursor += 1
+            if right:
+                l = right.pop()
+                left.append(l)
         elif i == '-':
-            if cursor != 0:
-                word.pop(cursor - 1)
-                cursor -= 1
+            if left:
+                left.pop()
         else:
-            word.insert(cursor, i)
-            cursor += 1
-    print(''.join(word))
+            left.append(i)
+    right = right[::-1]
+    for i in right:
+        left.append(i)
+
+    print(''.join(left))
