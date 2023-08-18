@@ -4,7 +4,7 @@ target = list(map(int, input().split(':')))
 t1 = now[0] * 3600 + now[1] * 60 + now[2]
 t2 = target[0] * 3600 + target[1] * 60 + target[2]
 # 현재 시간과 폭죽을 터트릴 시간을 초로 변환하여줍니다.
-if t1 > t2:
+if t1 >= t2:
     wait = t2 - t1 + 24 * 3600
 else:
     wait = t2 - t1
