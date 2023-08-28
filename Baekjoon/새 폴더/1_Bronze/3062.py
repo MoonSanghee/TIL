@@ -5,7 +5,7 @@ for _ in range(n) :
 #   수를 받아줍니다.
   reverseNumber = number[::-1]
 #   뒤집은 수를 구해줍니다.
-  sumValue = str(int(n) + int(reverseNumber))
+  sumValue = str(int(number) + int(reverseNumber))
 #   합을 구해줍니다.
   if sumValue == sumValue[::-1] :
     print("YES")
