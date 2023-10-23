@@ -9,8 +9,8 @@ for i in range(n):
         # 테이블의 범위 안에서 인덱스의 위치가 사람이라면
         for j in range(max(i - k, 0), min(i + k + 1, n)):
             # 뻣을수 있는 범위를 테이블 범위 안과 비교하여 확인하고
-            if table[i] == 'H':
-                table[i] = 0
+            if table[j] == 'H':
+                table[j] = 0
                 cnt += 1
                 # 햄버거가 있다면 0으로 바꿔주고 1개를 먹었다고 표시해줍니다.
                 break
