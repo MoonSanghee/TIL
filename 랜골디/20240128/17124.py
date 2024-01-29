@@ -5,7 +5,7 @@ for tc in range(t):
     # 두 리스트의 길이를 받아줍니다.
     alist = list(map(int, input().split()))
     blist = list(map(int, input().split()))
-    # 두 수열 리스트를 받아줍ㄴ디ㅏ.
+    # 두 수열 리스트를 받아줍니다.
     alist.sort()
     blist.sort()
     # 두 수열 리스트를 오름차순으로 정렬해줍니다.
