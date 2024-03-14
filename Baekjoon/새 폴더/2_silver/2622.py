@@ -1,7 +1,9 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
-
 cnt = 0
-
+# 세 변의 합의 길이와 만들수 있는 조합의 수를 담을 변수를 만들어줍니다.
 for i in range(1, n + 1):
     for j in range(i, n + 1):
         # n길이 이하의 가장 긴 변을 제외한 두 변의 길이를 설정해줍니다.
