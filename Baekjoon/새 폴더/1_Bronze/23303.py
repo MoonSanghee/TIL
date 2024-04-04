@@ -4,4 +4,4 @@ if 'd2' in word or 'D2' in word:
     print('D2')
 else:
     print('unrated')
-# 연속한 d2혹은 D2가 있는지 확인하고 
+# 연속한 d2혹은 D2가 있는지 확인하고 알맞은 결과를 출력해줍니다.
