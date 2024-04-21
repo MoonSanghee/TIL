@@ -28,9 +28,11 @@ elif paintb:
     B.append(paintb)
 # 문자열을 칠하는 것을 확인해 리스트에 뭉치를 넣어줍니다.
 if problems[-1] == 'R':
-    B.append('')
+    if B[0] != '':
+        B.append('')
 else:
-    R.append('')
+    if R[0] != '':
+        R.append('')
 # 마지막 배경 이 칠해졌는지 확인하여 칠하여줍니다.
 cnt = min(len(R), len(B))
 print(cnt)
