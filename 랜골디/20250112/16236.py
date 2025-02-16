@@ -62,3 +62,4 @@ def search():
     
 search()
 print(time)
+# 물고기를 먹는데 걸린 시간을 출력해줍니다
