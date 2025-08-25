@@ -13,7 +13,6 @@ dy = [1, 0, -1, 1, -1, 1, 0, -1]
 field = [[5] * n for _ in range(n)]
 # 최초에는 모든 칸에 5만큼 양분이 들어있다고 주어졌으므로 5만큼의 양분을 가진 n * n크기의 땅을 만들어줍니다
 
-
 for _ in range(k):
     # 봄, 여름
     for i in range(n):
@@ -32,6 +31,7 @@ for _ in range(k):
                 field[i][j] += nutrient
     # 나무가 심어진 칸을 찾아 나무가 있다면 자랄 나무와 죽을 나무를 확인하여 자랄 나무를 갱신하고 죽은 나무를 통해 땅에 양분을 추가해줍니다
 
+    # 가을
     new = []
     for x in range(n):
         for y in range(n):
@@ -47,6 +47,8 @@ for _ in range(k):
     for x, y in new:
         trees[x][y].append(1)
     # 번식하여 추가된 나무의 정보를 담아줍니다
+    
+    # 겨울
     for i in range(n):
         for j in range(n):
             field[i][j] += S2D2[i][j]
