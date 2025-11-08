@@ -33,9 +33,6 @@ for com in coms:
                     visited[nx][ny] = visited[x][y] + 1
                     q.append((nx,ny))
     # 너비우선탐색을 통해 바이러스를 놓은 위치에서 연결된 모든 좌표를 방문해줍니다
-    if visited[nx][ny] >= result:
-        continue
-    # 모든 좌표를 방문하는데 이전의 기록과 같거나 오래걸렸다면 다음 조합을 확인해줍니다
     flag = True
     for i in range(n):
         for j in range(n):
@@ -46,7 +43,7 @@ for com in coms:
                     flag = False
     # 방문하지 못한 자리가 있는지 확인해줍니다
     if flag:
-        result = result = min(result, cnt)
+        result = min(result, cnt)
     # 방문하지 못한 자리가 없다면 결과값을 갱신해줍니다
 
 if result != n * n:
